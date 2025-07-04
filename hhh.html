@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .diamond-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  justify-content: center;
+  gap: 20px;
+  transform: rotate(45deg); /* Rotate the whole grid */
+  margin: 80px 0;
+  background-color: aqua;
+}
+
+.diamond {
+
+    height: 120px;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: black;
+}
+
+.diamond img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotate(-45deg); /* Counter rotate image */
+  transition: transform 0.3s ease;
+}
+
+.diamond img:hover {
+  transform: scale(1.1) rotate(-45deg);
+}
+
+    </style>
+</head>
+<body>
+    <div class="diamond-grid">
+        <div class="diamond"><img src="images/Nike-Shoe.png" alt=""></div>
+        <div class="diamond"><img src="images/Nike-Shoe.png" alt=""></div>
+        <div class="diamond"><img src="images/Nike-Shoe.png" alt=""></div>
+        <div class="diamond"><img src="images/Nike-Shoe.png" alt=""></div>
+        <div class="diamond"><img src="images/Nike-Shoe.png" alt=""></div>
+        <div class="diamond"><img src="images/Nike-Shoe.png" alt=""></div>
+        <div class="diamond"><img src="images/Nike-Shoe.png" alt=""></div>
+        <div class="diamond"><img src="images/Nike-Shoe.png" alt=""></div>
+        <div class="diamond"><img src="images/Nike-Shoe.png" alt=""></div>
+      </div>
+      
+</body>
+</html>

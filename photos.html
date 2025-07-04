@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="master.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Event Photos Section with Popup Gallery</title>
+    <style>
+      h1 {
+        text-align: center;
+        color: #f9f7f7;
+        background: linear-gradient(to right, #000000, #555555, #ffffff);
+        box-shadow: 1px 6px 10px rgba(47, 45, 45, 0.838);
+        padding: 30px 0 10px;
+        font-size: 36px;
+        width: 30%;
+        margin: 0 auto;
+        border-radius: 16px;
+      }
+      .photos-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+        gap: 30px;
+      }
+      .photo-card {
+        display: flex;
+        width: 600px;
+        background-color: #bdb9b9;
+        border: 2px solid #515050;
+        border-radius: 10px;
+        box-shadow: 1px 6px 10px rgba(146, 137, 137, 0.838);
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+        overflow: hidden;
+        cursor: pointer;
+        border: none;
+      }
+      .photo-card:hover {
+        transform: scale(1.03);
+        box-shadow: 1px 6px 10px rgba(146, 137, 137, 0.838);
+      }
+      .photo-image {
+        width: 50%;
+        height: 250px;
+        object-fit: cover;
+      }
+      .photo-content {
+        width: 50%;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #fff;
+      }
+      .photo-content h2 {
+        color: #333;
+        margin: 0 0 10px;
+        font-size: 22px;
+        border-bottom: 1px solid #d3d3d3;
+        padding-bottom: 5px;
+      }
+      .photo-content p {
+        color: #555;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      @media (max-width: 650px) {
+        .photo-card {
+          flex-direction: column;
+          width: 90%;
+        }
+        .photo-image,
+        .photo-content {
+          width: 100%;
+          height: auto;
+        }
+        .photo-image {
+          height: 200px;
+        }
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+      }
+      .modal-content {
+        background: linear-gradient(
+          to right,
+          rgb(46, 46, 46),
+          grey,
+          rgb(46, 46, 46)
+        );
+        padding: 20px;
+        width: 90%;
+        max-width: 1000px; /* Increased for larger container */
+        border-radius: 10px;
+        position: relative;
+        animation: fadeIn 0.3s;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      .modal h2 {
+        text-align: center;
+        color: #fff7f7;
+        margin-bottom: 15px;
+      }
+      .modal-images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      .modal-images img {
+        width: 250px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      }
+      .close-btn {
+        position: absolute;
+        top: 8px;
+        right: 12px;
+        font-size: 24px;
+        color: #935555;
+        cursor: pointer;
+      }
+      button {
+        width: 70px;
+        letter-spacing: 2px;
+        background-color: #252323;
+        color: white;
+        box-shadow: 0 6px 8px rgb(39, 37, 37);
+        border: none;
+        padding: 5px;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+      .fading-bold-line {
+        width: 96%;
+        height: 4px;
+        margin: 20px auto;
+        background: linear-gradient(
+          to right,
+          transparent,
+          rgb(29, 29, 29),
+          transparent
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <section class="123">
+      <div class="header">
+        <div class="top">
+          <p>@PCTE</p>
+        </div>
+        <div class="bottom">
+          <a href="index.html">Home</a>
+          <a href="">About</a>
+          <a href="#events">Events</a>
+          <a href="#gallery">Gallery</a>
+          <a href="">Contact</a>
+        </div>
+      </div>
+    </section>
+    <h1>Our Memorable Events</h1>
+    <br />
+
+    <div class="photos-section">
+      <div class="photo-card">
+        <img src="images/2.webp" alt="Koshish Event" class="photo-image" />
+        <div class="photo-content">
+          <h2>KOSHISH EVENT</h2>
+          <p>
+            "A beautifully decorated event with lots of activites and
+            performaces to encourage students interest and their hobbies."
+          </p>
+          <button
+            type="button"
+            onclick="openModal('KOSHISH EVENT', ['images/1.webp', 'images/2.webp', 'images/3.jpg', 'images/4.webp', '4.webp', '5.webp'])"
+          >
+            click!
+          </button>
+        </div>
+      </div>
+
+      <div class="photo-card">
+        <img src="event2.jpg" alt="Hackathon" class="photo-image" />
+        <div class="photo-content">
+          <h2>HACKATHON</h2>
+          <p>
+            "A dynamic Hackathon event fostering innovation, collaboration, and
+            creative problem-solving among talented participants."
+          </p>
+          <button
+            type="button"
+            onclick="openModal('HACKATHON', ['event2.jpg', 'imagess/h1.jpg', 'imagess/h2.jpg'])"
+          >
+            click!
+          </button>
+        </div>
+      </div>
+
+      <div class="photo-card">
+        <img src="event3.jpg" alt="Sports Day" class="photo-image" />
+        <div class="photo-content">
+          <h2>SPORTS DAY</h2>
+          <p>
+            "An energetic and thrilling Sports Day filled with exciting races,
+            team spirit, and unforgettable moments of victory and joy."
+          </p>
+          <button
+            type="button"
+            onclick="openModal('SPORTS DAY', ['event3.jpg', 'imagess/s1.jpg', 'imagess/s2.jpg'])"
+          >
+            click!
+          </button>
+        </div>
+      </div>
+
+      <div class="photo-card">
+        <img src="event4.jpg" alt="Fashion Show" class="photo-image" />
+        <div class="photo-content">
+          <h2>FASHION SHOW</h2>
+          <p>
+            "An exciting fashion show event filled with vibrant outfits,
+            confident walks, and creative expressions of style."
+          </p>
+          <button
+            type="button"
+            onclick="openModal('FASHION SHOW', ['event4.jpg', 'imagess/f1.jpg', 'imagess/f2.jpg'])"
+          >
+            click!
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="newsletter-text">
+        Join newsletter for updates !<br />
+        <input type="email" name="email" placeholder="example@gmail.com" />
+        <button onclick="alert('Subscribed')">Subscribe</button>
+      </div>
+      <div class="footer-headings">
+        Quick Links
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="photos.html">Gallery</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-headings">
+        Social Community
+        <ul>
+          <li>
+            <a
+              href="https://www.instagram.com/pcteofficial/?hl=en"
+              target="_blank"
+              ><i class="fa-brands fa-instagram"></i> &nbsp instagram</a
+            >
+          </li>
+          <li>
+            <a href="https://www.facebook.com/pctegroup/" target="_blank"
+              ><i class="fa-brands fa-facebook"></i> &nbsp facebook</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://in.linkedin.com/school/pcte-ludhiana/"
+              target="_blank"
+              ><i class="fa-brands fa-linkedin"></i> &nbsp linkedin</a
+            >
+          </li>
+          <li>
+            <a href="https://x.com/pcteofficial" target="_blank"
+              ><i class="fa-brands fa-twitter"></i>&nbsp Twitter</a
+            >
+          </li>
+          <br /><br />
+        </ul>
+      </div>
+
+      <div class="footer-headings">
+        Contact
+        <ul>
+          <li>
+            <a href="https://maps.app.goo.gl/dE5YNQQFZgytxmucA" target="_blank"
+              ><i class="fa-solid fa-location-dot"></i>&nbsp PCTE Group of
+              Institutes</a
+            >
+          </li>
+          <li>
+            <a href="mailto:info@pcte.edu.in"
+              ><i class="fa-regular fa-envelope"></i>&nbsp info@pcte.edu.in</a
+            >
+          </li>
+          <li>
+            <a href="mailto:info@pcte.edu.in"
+              ><i class="fa-solid fa-phone"></i>&nbsp 0161-2888-500</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Modal / Popup -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <div class="modal-images" id="modalImages"></div>
+      </div>
+    </div>
+
+    <script>
+      function openModal(title, images) {
+        document.getElementById("modalTitle").textContent = title;
+        const imagesContainer = document.getElementById("modalImages");
+        imagesContainer.innerHTML = ""; // Clear previous images
+        images.forEach((src) => {
+          const img = document.createElement("img");
+          img.src = src;
+          imagesContainer.appendChild(img);
+        });
+        document.getElementById("myModal").style.display = "flex";
+      }
+
+      function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

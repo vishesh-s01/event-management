@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=['shyna','vishesh','suhani','prince' ,'aa','bb'];
+        let arrnew=arr.map(
+            (arr)=>{
+                return "MR."+arr
+        });
+        console.log(arr);
+        for( let names of arr)
+        {
+            console.log(names)
+        }
+        console.log(arrnew);
+        for(let names of arrnew)
+        {
+            console.log(names)
+        }
+
+
+        //next
+        let num=[10,20,30,40];
+        let newmun=num.map(
+            (num)=>{
+                return num**2;
+            }
+        )
+        console.log(num);
+        for( let num1 of num)
+        {
+            console.log(num1);
+        }
+        console.log(newmun);
+        for(let num1 of newmun)
+        {
+            console.log(num1)
+        }
+
+        //next
+        let ff= arr.filter(
+            (arr)=>{
+                return arr.length==2;
+            }
+        )
+        console.log(ff)
+        //next
+        let uc=arr.map(
+            (arr)=>{
+                return arr.toUpperCase();
+            }
+        )
+        console.log(uc)
+    </script>
+
+</body>
+</html>

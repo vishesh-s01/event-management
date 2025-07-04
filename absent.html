@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var name =[ "suhani ", "prince", "shyna","vishesh"];
+var newname =name.map((name)=>"Ms."+ name);
+console.log(newname)
+
+var num = [1,2,3,4,5];
+var newnum = num.map((num)=>num*2*2);
+console.log(newnum)
+var newnum = num.map((num)=>num*3*3*3);
+console.log(newnum)
+
+var names =[ "suhani ", "prince", "shyna","vishesh"];
+var newnames =names.map((names)=>names.toUpperCase());
+console.log(newnames)
+
+var names =[ "suhani ", "prince", "shyna","vishesh"];
+var newnames =names.map((names)=>names.toLowerCase());
+console.log(newnames)
+
+var n1 = ["suhani" , "shyna" , "sukhveer ," ];
+var n2 = ["prince" , "vishesh" , "gurnoor"];
+var name1 = n1.map((n1)=> "Ms." + n1);
+var name2 = n2.map((n2)=> "Mr." + n2);
+console.log(name1 + name2) 
+
+var names = ["pri", "raj", "suhani", "shyna"];
+var newnames = names.filter((name) => name.length === 3);
+console.log(newnames)
+
+var marks = 82;
+if(marks<=90){
+    console.log("A grade");
+}
+else if(marks<=80){
+    console.log("B grade");
+}
+else if(marks <=70){
+    console.log("C grade")
+}
+else{
+    console.log("D grade");
+}
+
+//write a program to check if no is odd or even
+var a=4;
+if(a%2==0)
+{
+   console.log(a,"is even") 
+}
+else{
+    console.log(a,"is odd")
+}
+
+
+
+age=18;
+id=true;
+
+if( age=>18)
+{
+   if(id===true){
+    console.log("eligible");
+    }
+else{
+       console.log("not eligible sorry! :(")
+    }
+}
+var color="green";
+
+if(color==="red"){
+    console.log("STOPPPPPP!!!!!");
+}
+else if(color==="yellow"){
+     console.log("WAITTT!!!!");
+}
+else{
+     console.log("GO AHEAD:)");
+}
+    </script>
+</body>
+</html>

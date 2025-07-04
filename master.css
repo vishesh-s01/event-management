@@ -1,0 +1,333 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-padding-top: 100px;
+}
+.header {
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px solid white;
+  box-shadow: 0px 1px 8px rgba(180, 179, 179, 0.657);
+  z-index: 100;
+}
+.top {
+  background-color: rgb(98, 114, 112);
+  font-weight: 600;
+  padding: 7px 0px;
+}
+.top p {
+  font-size: 20px;
+  color: black;
+}
+.bottom {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.bottom a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+.bottom a:hover {
+  transform: scale(1.04);
+  color: rgb(126, 147, 144);
+}
+.top p {
+  margin-left: 48%;
+}
+.hero-section {
+  height: 90vh; /* Or any specific height like 500px */
+  overflow: hidden;
+}
+
+.hero-section video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1000;
+  position: absolute;
+}
+.container {
+  height: 40vh;
+  width: 120vh;
+  z-index: 10;
+  margin: 300px 50px;
+  color: white;
+  line-height: 1.5;
+}
+.container p1 {
+  font-size: 60px;
+  color: rgb(98, 114, 112);
+  font-weight: bold;
+}
+.container p {
+  font-size: 35px;
+}
+.container button {
+  background-color: rgb(98, 114, 112);
+  border: none;
+  border-radius: 15px;
+  width: 13%;
+  padding: 15px;
+  margin: 8px 30px;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.container button:hover {
+  transform: scale(1.05);
+  box-shadow: none;
+}
+.heading {
+  font-size: 60px;
+  color: rgb(15, 15, 15);
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.event-container {
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 20px;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+.cards {
+  height: 450px;
+  width: 350px;
+  border-radius: 20px;
+  transition: 0.3s ease;
+  margin: 0 auto;
+}
+.cards:hover {
+  transform: scale(1.05);
+  box-shadow: 4px 2px 8px rgb(126, 117, 117);
+}
+.card-top {
+  height: 90%;
+  border-radius: 20px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.card-bottom {
+  height: 10%;
+  background-color: black;
+  border-radius: 20px;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+  padding-top: 10px;
+}
+.card-bottom p {
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 25px;
+}
+.card-top video {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+  border-radius: 20px 20px 0 0;
+}
+
+/* explore button */
+.explore {
+  margin-top: 25px;
+  display: flex;
+}
+.explore button {
+  background-color: rgb(98, 114, 112);
+  padding: 15px;
+  border-radius: 10px;
+  margin: 0 auto;
+  color: white;
+  font-weight: bold;
+  width: 125px;
+  border: none;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+.explore button:hover {
+  transform: scale(1.05);
+  color: white;
+  background: linear-gradient(black), rgb(57, 84, 103);
+  box-shadow: 2px 2px 8px rgb(126, 147, 144);
+  width: 150px;
+}
+.explore button a {
+  color: white;
+  text-decoration: none;
+}
+.icon {
+  font-size: 25px;
+  line-height: 0;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  color: wheat;
+  width: 80%;
+  border-radius: 15px;
+  margin: 25px auto;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.grid-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+  border-radius: 15px;
+  transition: 0.3s ease;
+  transform: rotate(15deg);
+}
+.grid-container img:hover {
+  transform: scale(1.04);
+  z-index: 10;
+}
+.headings {
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  margin-top: 7%;
+  margin: 0 auto;
+  color: black;
+}
+.up1 {
+  background-color: rgb(126, 147, 144);
+  color: white;
+  font-size: 30px;
+  font-style: italic;
+  width: 20%;
+  margin: 1% 5%;
+  padding: 10px;
+  transition: 1.3s ease;
+  font-weight: bold;
+  border-radius: 0 15px 15px 0;
+  animation: increasewidth 3.5s ease-in-out 0s 1 alternate forwards running;
+}
+@keyframes increasewidth {
+  from {
+    width: 20%;
+  }
+  to {
+    width: 40%;
+    border-radius: 0 20px 20px 0;
+  }
+}
+.up2 {
+  background-color: rgb(126, 147, 144);
+  color: white;
+  font-size: 30px;
+  font-style: italic;
+  width: 40%;
+  margin: 1% 5%;
+  padding: 10px;
+  transition: 1.3s ease;
+  font-weight: bold;
+  border-radius: 0 15px 15px 0;
+  animation: increasewidth2 3.5s ease-in-out 0s 1 alternate forwards running;
+}
+@keyframes increasewidth2 {
+  from {
+    width: 20%;
+  }
+  to {
+    width: 60%;
+    border-radius: 0 20px 20px 0;
+  }
+}
+.up3 {
+  background-color: rgb(126, 147, 144);
+  color: white;
+  font-size: 30px;
+  font-style: italic;
+  width: 60%;
+  margin: 1% 5%;
+  padding: 10px;
+  transition: 1.3s ease;
+  font-weight: bold;
+  border-radius: 0 15px 15px 0;
+  animation: increasewidth3 3.5s ease-in-out 0s 1 alternate forwards running;
+}
+@keyframes increasewidth3 {
+  from {
+    width: 20%;
+  }
+  to {
+    width: 80%;
+    border-radius: 0 20px 20px 0;
+  }
+}
+
+.footer {
+  background-color: black;
+  color: rgb(126, 147, 144);
+  padding-top: 35px;
+  padding-left: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.footer-headings {
+  color: white;
+  font-size: 23px;
+}
+.footer a {
+  color: rgb(126, 147, 144);
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  margin-top: 7%;
+  text-align: center;
+  transition: 0.3s ease;
+}
+.footer ul {
+  list-style: none;
+  text-align: center;
+}
+.newsletter-text {
+  color: white;
+  height: auto;
+  width: auto;
+  font-size: 23px;
+}
+.footer input {
+  border-radius: 5px;
+  padding: 5px;
+  color: black;
+  background-color: white;
+  margin-top: 20px;
+  width: 200px;
+}
+.footer button {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgb(69, 80, 78);
+  color: white;
+  border: none;
+  transition: 0.3s ease;
+}
+.footer button:hover {
+  background-color: rgb(76, 90, 87);
+  padding: 7px;
+}
+.footer a:hover {
+  transform: scale(1.02);
+  color: white;
+}
